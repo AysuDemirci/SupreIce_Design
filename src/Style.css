@@ -5,14 +5,14 @@
     display: flex;
     border-bottom:2px solid #f29999 ;
     border-top:2px solid #f29999 ;
+
 }
 
 .navbar-ul{
     list-style: none;
     display: flex;
-
     font-size: large;
-    margin-left: 500px;
+    margin-left: 200px;
 
 }
 .navbar-ul-2{
@@ -26,31 +26,33 @@
 }
 
 .navbar-brandName{
-    margin-top: 13px;
-    padding-left: 150px;
+    margin-top: 0px;
+    padding-left: 350px;
+    font-size:50px;
 }
 
 .navbar-menuItems{
     background-color: transparent;
     border: none;
-    font-size: 15px;
+    font-size: 16px;
     text-align: center;
-    height: 50px;
+
     position: relative;
-    width: 100px;
-    margin-top: -6px;
+    margin-top: -13px;
+    padding: 18px;
     
 }
 
 .navbar-menuItems:hover{
   border-bottom:3px solid #bf4565;
+  color: #bf4565;
 }
 
 .navbar-searchInput{
     height: 35px;
     width:13%;
     margin-top: 13px;
-    margin-left: 230px;
+    margin-left: 150px;
     border-radius: 35px;
     border: none;
     background-color: rgba(158, 151, 151, 0.2) ;
@@ -66,10 +68,11 @@
     transition: all linear 0.3s;
     display: flex;
     position: absolute;
-    width: 700px;
-    left:820px;
+    width: 930px;
+    height: 400px;
+    left:790px;
     z-index: 10;
-    margin-top: 3px;
+
 
   }
 
@@ -77,15 +80,31 @@
     list-style: none;
     padding: unset;
     margin: unset;
+    width: 100%;
+    display: flex;
+    font-size: 14px;
+    margin-left: -20px;
+    margin-top: 15px;
+
   }
   
   .dropdown-li{
-    padding: 14px;
+
     transition: all linear 0.3s;
-  }
+
+    text-align: center;
+    padding: 15px 45px 15px 45px;
+}
 
   .dropdown-li:hover{
     background:lightgray;
     cursor: pointer;
     color: #fff;
+    height: 10px;
+  }
+
+
+  .dropdown-content-ul{
+    list-style: none;
+    
   }
