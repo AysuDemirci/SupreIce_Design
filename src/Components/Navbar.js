@@ -9,123 +9,678 @@ export default function Navbar() {
       options: [
         {
           option: "Giyim",
-          contents:[{content:"Elbise"},{content:"Tişört"},{content:"Gömlek"},{content:"Pantolon"},{content:"Mont"},{content:"Ceket"},{content:"Etek"}]
+          contents: [
+            { content: "Elbise" },
+            { content: "Tişört" },
+            { content: "Gömlek" },
+            { content: "Pantolon" },
+            { content: "Mont" },
+            { content: "Ceket" },
+            { content: "Etek" },
+          ],
         },
-        { option: "Ayakkabı" },
-        { option: "Aksesuar&Çanta" },
-        { option: "İç Giyim" },
-        { option: "Lüks&Designer" },
-        { option: "Kozmetik" },
-        { option: "Spor&Outdoor" },
+        {
+          option: "Ayakkabı",
+          contents: [
+            { content: "Topuklu Ayakkabı" },
+            { content: "Spor Ayakkabı" },
+            { content: "Klasik Ayakkabı" },
+            { content: "Espadril" },
+            { content: "Babet" },
+            { content: "Terlik" },
+            { content: "Sandalet" },
+          ],
+        },
+        {
+          option: "Aksesuar&Çanta",
+          contents: [
+            { content: "Bilezik" },
+            { content: "Kolye" },
+            { content: "Küpe" },
+            { content: "Bileklik" },
+            { content: "Set-Takım " },
+            { content: "Omuz Çantası" },
+            { content: "Sırt Çantası" },
+          ],
+        },
+        {
+          option: "İç Giyim",
+          contents: [
+            { content: "Külot" },
+            { content: "Sütyen" },
+            { content: "Boxer" },
+            { content: "Atlet" },
+            { content: "Fantezi Giyim" },
+            { content: "Jartiyer" },
+            { content: "Takım İç Çamaşır" },
+          ],
+        },
+        {
+          option: "Lüks&Designer",
+          contents: [
+            { content: "Tasarım Çanta" },
+            { content: "Tasarım Elbise" },
+            { content: "Tasarım Takım Elbise" },
+            { content: "Tasarım Ayakkabı" },
+          ],
+        },
+        {
+          option: "Kozmetik",
+          contents: [
+            { content: "Deodorant" },
+            { content: "Parfüm" },
+            { content: "Krem" },
+            { content: "Yıkama Jeli" },
+            { content: "Güneş Kremi" },
+          ],
+        },
+        {
+          option: "Spor&Outdoor",
+          contents: [
+            { content: "Çadır" },
+            { content: "Kamp Malzemeleri" },
+            { content: "Elektrikli Bisiklet" },
+          ],
+        },
       ],
     },
     {
       id: 1,
       name: "Erkek",
       options: [
-        { option: "Giyim" },
-        { option: "Ayakkabı" },
-        { option: "Çanta" },
-        { option: "İç Giyim" },
-        { option: "Pijama" },
-        { option: "Elektronik" },
-        { option: "Spor&Outdoor" },
+        {
+          option: "Giyim",
+          contents: [
+            { content: "Elbise" },
+            { content: "Tişört" },
+            { content: "Gömlek" },
+            { content: "Pantolon" },
+            { content: "Mont" },
+            { content: "Ceket" },
+            { content: "Etek" },
+          ],
+        },
+        {
+          option: "Ayakkabı",
+          contents: [
+            { content: "Topuklu Ayakkabı" },
+            { content: "Spor Ayakkabı" },
+            { content: "Klasik Ayakkabı" },
+            { content: "Espadril" },
+            { content: "Babet" },
+            { content: "Terlik" },
+            { content: "Sandalet" },
+          ],
+        },
+        {
+          option: "Aksesuar&Çanta",
+          contents: [
+            { content: "Bilezik" },
+            { content: "Kolye" },
+            { content: "Küpe" },
+            { content: "Bileklik" },
+            { content: "Set-Takım " },
+            { content: "Omuz Çantası" },
+            { content: "Sırt Çantası" },
+          ],
+        },
+        {
+          option: "İç Giyim",
+          contents: [
+            { content: "Külot" },
+            { content: "Sütyen" },
+            { content: "Boxer" },
+            { content: "Atlet" },
+            { content: "Fantezi Giyim" },
+            { content: "Jartiyer" },
+            { content: "Takım İç Çamaşır" },
+          ],
+        },
+        {
+          option: "Lüks&Designer",
+          contents: [
+            { content: "Tasarım Çanta" },
+            { content: "Tasarım Elbise" },
+            { content: "Tasarım Takım Elbise" },
+            { content: "Tasarım Ayakkabı" },
+          ],
+        },
+        {
+          option: "Kozmetik",
+          contents: [
+            { content: "Deodorant" },
+            { content: "Parfüm" },
+            { content: "Krem" },
+            { content: "Yıkama Jeli" },
+            { content: "Güneş Kremi" },
+          ],
+        },
+        {
+          option: "Spor&Outdoor",
+          contents: [
+            { content: "Çadır" },
+            { content: "Kamp Malzemeleri" },
+            { content: "Elektrikli Bisiklet" },
+          ],
+        },
       ],
     },
     {
       id: 2,
       name: "Ev&Mobilya",
       options: [
-        { option: "Giyim" },
-        { option: "Ayakkabı" },
-        { option: "Çanta" },
-        { option: "İç Giyim" },
-        { option: "Pijama" },
-        { option: "Elektronik" },
-        { option: "Spor&Outdoor" },
+        {
+          option: "Mobilya",
+          contents: [
+            { content: "Elbise" },
+            { content: "Tişört" },
+            { content: "Gömlek" },
+            { content: "Pantolon" },
+            { content: "Mont" },
+            { content: "Ceket" },
+            { content: "Etek" },
+          ],
+        },
+        {
+          option: "Lambader",
+          contents: [
+            { content: "Topuklu Ayakkabı" },
+            { content: "Spor Ayakkabı" },
+            { content: "Klasik Ayakkabı" },
+            { content: "Espadril" },
+            { content: "Babet" },
+            { content: "Terlik" },
+            { content: "Sandalet" },
+          ],
+        },
+        {
+          option: "Koltuk Takımı",
+          contents: [
+            { content: "Bilezik" },
+            { content: "Kolye" },
+            { content: "Küpe" },
+            { content: "Bileklik" },
+            { content: "Set-Takım " },
+            { content: "Omuz Çantası" },
+            { content: "Sırt Çantası" },
+          ],
+        },
+        {
+          option: "İç Giyim",
+          contents: [
+            { content: "Külot" },
+            { content: "Sütyen" },
+            { content: "Boxer" },
+            { content: "Atlet" },
+            { content: "Fantezi Giyim" },
+            { content: "Jartiyer" },
+            { content: "Takım İç Çamaşır" },
+          ],
+        },
+        {
+          option: "Lüks&Designer",
+          contents: [
+            { content: "Tasarım Çanta" },
+            { content: "Tasarım Elbise" },
+            { content: "Tasarım Takım Elbise" },
+            { content: "Tasarım Ayakkabı" },
+          ],
+        },
+        {
+          option: "Kozmetik",
+          contents: [
+            { content: "Deodorant" },
+            { content: "Parfüm" },
+            { content: "Krem" },
+            { content: "Yıkama Jeli" },
+            { content: "Güneş Kremi" },
+          ],
+        },
+        {
+          option: "Spor&Outdoor",
+          contents: [
+            { content: "Çadır" },
+            { content: "Kamp Malzemeleri" },
+            { content: "Elektrikli Bisiklet" },
+          ],
+        },
       ],
     },
     {
       id: 3,
       name: "Süpermarket",
       options: [
-        { option: "Giyim" },
-        { option: "Ayakkabı" },
-        { option: "Çanta" },
-        { option: "İç Giyim" },
-        { option: "Pijama" },
-        { option: "Elektronik" },
-        { option: "Spor&Outdoor" },
+        {
+          option: "Giyim",
+          contents: [
+            { content: "Elbise" },
+            { content: "Tişört" },
+            { content: "Gömlek" },
+            { content: "Pantolon" },
+            { content: "Mont" },
+            { content: "Ceket" },
+            { content: "Etek" },
+          ],
+        },
+        {
+          option: "Ayakkabı",
+          contents: [
+            { content: "Topuklu Ayakkabı" },
+            { content: "Spor Ayakkabı" },
+            { content: "Klasik Ayakkabı" },
+            { content: "Espadril" },
+            { content: "Babet" },
+            { content: "Terlik" },
+            { content: "Sandalet" },
+          ],
+        },
+        {
+          option: "Aksesuar&Çanta",
+          contents: [
+            { content: "Bilezik" },
+            { content: "Kolye" },
+            { content: "Küpe" },
+            { content: "Bileklik" },
+            { content: "Set-Takım " },
+            { content: "Omuz Çantası" },
+            { content: "Sırt Çantası" },
+          ],
+        },
+        {
+          option: "İç Giyim",
+          contents: [
+            { content: "Külot" },
+            { content: "Sütyen" },
+            { content: "Boxer" },
+            { content: "Atlet" },
+            { content: "Fantezi Giyim" },
+            { content: "Jartiyer" },
+            { content: "Takım İç Çamaşır" },
+          ],
+        },
+        {
+          option: "Lüks&Designer",
+          contents: [
+            { content: "Tasarım Çanta" },
+            { content: "Tasarım Elbise" },
+            { content: "Tasarım Takım Elbise" },
+            { content: "Tasarım Ayakkabı" },
+          ],
+        },
+        {
+          option: "Kozmetik",
+          contents: [
+            { content: "Deodorant" },
+            { content: "Parfüm" },
+            { content: "Krem" },
+            { content: "Yıkama Jeli" },
+            { content: "Güneş Kremi" },
+          ],
+        },
+        {
+          option: "Spor&Outdoor",
+          contents: [
+            { content: "Çadır" },
+            { content: "Kamp Malzemeleri" },
+            { content: "Elektrikli Bisiklet" },
+          ],
+        },
       ],
     },
     {
       id: 4,
       name: "Kozmetik",
       options: [
-        { option: "Giyim" },
-        { option: "Ayakkabı" },
-        { option: "Çanta" },
-        { option: "İç Giyim" },
-        { option: "Pijama" },
-        { option: "Elektronik" },
-        { option: "Spor&Outdoor" },
+        {
+          option: "Giyim",
+          contents: [
+            { content: "Elbise" },
+            { content: "Tişört" },
+            { content: "Gömlek" },
+            { content: "Pantolon" },
+            { content: "Mont" },
+            { content: "Ceket" },
+            { content: "Etek" },
+          ],
+        },
+        {
+          option: "Ayakkabı",
+          contents: [
+            { content: "Topuklu Ayakkabı" },
+            { content: "Spor Ayakkabı" },
+            { content: "Klasik Ayakkabı" },
+            { content: "Espadril" },
+            { content: "Babet" },
+            { content: "Terlik" },
+            { content: "Sandalet" },
+          ],
+        },
+        {
+          option: "Aksesuar&Çanta",
+          contents: [
+            { content: "Bilezik" },
+            { content: "Kolye" },
+            { content: "Küpe" },
+            { content: "Bileklik" },
+            { content: "Set-Takım " },
+            { content: "Omuz Çantası" },
+            { content: "Sırt Çantası" },
+          ],
+        },
+        {
+          option: "İç Giyim",
+          contents: [
+            { content: "Külot" },
+            { content: "Sütyen" },
+            { content: "Boxer" },
+            { content: "Atlet" },
+            { content: "Fantezi Giyim" },
+            { content: "Jartiyer" },
+            { content: "Takım İç Çamaşır" },
+          ],
+        },
+        {
+          option: "Lüks&Designer",
+          contents: [
+            { content: "Tasarım Çanta" },
+            { content: "Tasarım Elbise" },
+            { content: "Tasarım Takım Elbise" },
+            { content: "Tasarım Ayakkabı" },
+          ],
+        },
+        {
+          option: "Kozmetik",
+          contents: [
+            { content: "Deodorant" },
+            { content: "Parfüm" },
+            { content: "Krem" },
+            { content: "Yıkama Jeli" },
+            { content: "Güneş Kremi" },
+          ],
+        },
+        {
+          option: "Spor&Outdoor",
+          contents: [
+            { content: "Çadır" },
+            { content: "Kamp Malzemeleri" },
+            { content: "Elektrikli Bisiklet" },
+          ],
+        },
       ],
     },
     {
       id: 5,
-      name: "Ayakkabı",
+      name: "Ayakkabı & Çanta",
       options: [
-        { option: "Giyim" },
-        { option: "Ayakkabı" },
-        { option: "Çanta" },
-        { option: "İç Giyim" },
-        { option: "Pijama" },
-        { option: "Elektronik" },
-        { option: "Spor&Outdoor" },
+        {
+          option: "Giyim",
+          contents: [
+            { content: "Elbise" },
+            { content: "Tişört" },
+            { content: "Gömlek" },
+            { content: "Pantolon" },
+            { content: "Mont" },
+            { content: "Ceket" },
+            { content: "Etek" },
+          ],
+        },
+        {
+          option: "Ayakkabı",
+          contents: [
+            { content: "Topuklu Ayakkabı" },
+            { content: "Spor Ayakkabı" },
+            { content: "Klasik Ayakkabı" },
+            { content: "Espadril" },
+            { content: "Babet" },
+            { content: "Terlik" },
+            { content: "Sandalet" },
+          ],
+        },
+        {
+          option: "Aksesuar&Çanta",
+          contents: [
+            { content: "Bilezik" },
+            { content: "Kolye" },
+            { content: "Küpe" },
+            { content: "Bileklik" },
+            { content: "Set-Takım " },
+            { content: "Omuz Çantası" },
+            { content: "Sırt Çantası" },
+          ],
+        },
+        {
+          option: "İç Giyim",
+          contents: [
+            { content: "Külot" },
+            { content: "Sütyen" },
+            { content: "Boxer" },
+            { content: "Atlet" },
+            { content: "Fantezi Giyim" },
+            { content: "Jartiyer" },
+            { content: "Takım İç Çamaşır" },
+          ],
+        },
+        {
+          option: "Lüks&Designer",
+          contents: [
+            { content: "Tasarım Çanta" },
+            { content: "Tasarım Elbise" },
+            { content: "Tasarım Takım Elbise" },
+            { content: "Tasarım Ayakkabı" },
+          ],
+        },
+        {
+          option: "Kozmetik",
+          contents: [
+            { content: "Deodorant" },
+            { content: "Parfüm" },
+            { content: "Krem" },
+            { content: "Yıkama Jeli" },
+            { content: "Güneş Kremi" },
+          ],
+        },
+        {
+          option: "Spor&Outdoor",
+          contents: [
+            { content: "Çadır" },
+            { content: "Kamp Malzemeleri" },
+            { content: "Elektrikli Bisiklet" },
+          ],
+        },
       ],
     },
     {
       id: 6,
       name: "Elektronik",
       options: [
-        { option: "Giyim" },
-        { option: "Ayakkabı" },
-        { option: "Çanta" },
-        { option: "İç Giyim" },
-        { option: "Pijama" },
-        { option: "Elektronik" },
-        { option: "Spor&Outdoor" },
+        {
+          option: "Giyim",
+          contents: [
+            { content: "Elbise" },
+            { content: "Tişört" },
+            { content: "Gömlek" },
+            { content: "Pantolon" },
+            { content: "Mont" },
+            { content: "Ceket" },
+            { content: "Etek" },
+          ],
+        },
+        {
+          option: "Ayakkabı",
+          contents: [
+            { content: "Topuklu Ayakkabı" },
+            { content: "Spor Ayakkabı" },
+            { content: "Klasik Ayakkabı" },
+            { content: "Espadril" },
+            { content: "Babet" },
+            { content: "Terlik" },
+            { content: "Sandalet" },
+          ],
+        },
+        {
+          option: "Aksesuar&Çanta",
+          contents: [
+            { content: "Bilezik" },
+            { content: "Kolye" },
+            { content: "Küpe" },
+            { content: "Bileklik" },
+            { content: "Set-Takım " },
+            { content: "Omuz Çantası" },
+            { content: "Sırt Çantası" },
+          ],
+        },
+        {
+          option: "İç Giyim",
+          contents: [
+            { content: "Külot" },
+            { content: "Sütyen" },
+            { content: "Boxer" },
+            { content: "Atlet" },
+            { content: "Fantezi Giyim" },
+            { content: "Jartiyer" },
+            { content: "Takım İç Çamaşır" },
+          ],
+        },
+        {
+          option: "Lüks&Designer",
+          contents: [
+            { content: "Tasarım Çanta" },
+            { content: "Tasarım Elbise" },
+            { content: "Tasarım Takım Elbise" },
+            { content: "Tasarım Ayakkabı" },
+          ],
+        },
+        {
+          option: "Kozmetik",
+          contents: [
+            { content: "Deodorant" },
+            { content: "Parfüm" },
+            { content: "Krem" },
+            { content: "Yıkama Jeli" },
+            { content: "Güneş Kremi" },
+          ],
+        },
+        {
+          option: "Spor&Outdoor",
+          contents: [
+            { content: "Çadır" },
+            { content: "Kamp Malzemeleri" },
+            { content: "Elektrikli Bisiklet" },
+          ],
+        },
+      ],
+    },
+    {
+      id: 7,
+      name: "Anne & Çocuk",
+      options: [
+        {
+          option: "Giyim",
+          contents: [
+            { content: "Elbise" },
+            { content: "Tişört" },
+            { content: "Gömlek" },
+            { content: "Pantolon" },
+            { content: "Mont" },
+            { content: "Ceket" },
+            { content: "Etek" },
+          ],
+        },
+        {
+          option: "Ayakkabı",
+          contents: [
+            { content: "Topuklu Ayakkabı" },
+            { content: "Spor Ayakkabı" },
+            { content: "Klasik Ayakkabı" },
+            { content: "Espadril" },
+            { content: "Babet" },
+            { content: "Terlik" },
+            { content: "Sandalet" },
+          ],
+        },
+        {
+          option: "Aksesuar&Çanta",
+          contents: [
+            { content: "Bilezik" },
+            { content: "Kolye" },
+            { content: "Küpe" },
+            { content: "Bileklik" },
+            { content: "Set-Takım " },
+            { content: "Omuz Çantası" },
+            { content: "Sırt Çantası" },
+          ],
+        },
+        {
+          option: "İç Giyim",
+          contents: [
+            { content: "Külot" },
+            { content: "Sütyen" },
+            { content: "Boxer" },
+            { content: "Atlet" },
+            { content: "Fantezi Giyim" },
+            { content: "Jartiyer" },
+            { content: "Takım İç Çamaşır" },
+          ],
+        },
+        {
+          option: "Lüks&Designer",
+          contents: [
+            { content: "Tasarım Çanta" },
+            { content: "Tasarım Elbise" },
+            { content: "Tasarım Takım Elbise" },
+            { content: "Tasarım Ayakkabı" },
+          ],
+        },
+        {
+          option: "Kozmetik",
+          contents: [
+            { content: "Deodorant" },
+            { content: "Parfüm" },
+            { content: "Krem" },
+            { content: "Yıkama Jeli" },
+            { content: "Güneş Kremi" },
+          ],
+        },
+        {
+          option: "Spor&Outdoor",
+          contents: [
+            { content: "Çadır" },
+            { content: "Kamp Malzemeleri" },
+            { content: "Elektrikli Bisiklet" },
+          ],
+        },
       ],
     },
   ];
 
   const [isDrowpdownVisible, setIsDropdownVisible] = useState(false);
-  const [activeMenuId, setActiveMenuId]=useState(null)
-
+  const [activeMenuId, setActiveMenuId] = useState(null);
 
   function handleMouseEnter(id) {
     setIsDropdownVisible(true);
-    setActiveMenuId(id)
+    setActiveMenuId(id);
   }
   function handleMouseLeave() {
     setIsDropdownVisible(false);
-    setActiveMenuId(null)
+    setActiveMenuId(null);
   }
 
   return (
     <div className="navbar">
       <h1 className="navbar-brandName">SupreIce</h1>
-      <ul className="navbar-ul" >
+      <ul className="navbar-ul">
         {menuItems.map((item) => (
           <li
             key={item.id}
             id={item.id}
             className="navbar-li"
-            onMouseEnter={()=>handleMouseEnter(item.id)}
+            onMouseEnter={() => handleMouseEnter(item.id)}
             onMouseLeave={handleMouseLeave}
           >
             <button className="navbar-menuItems">{item.name}</button>
-            {isDrowpdownVisible && activeMenuId===item.id&& <Dropdown options={item.options} />}
+            {isDrowpdownVisible && activeMenuId === item.id && (
+              <Dropdown options={item.options} />
+            )}
           </li>
         ))}
       </ul>
