@@ -36,7 +36,7 @@
     border: none;
     font-size: 16px;
     text-align: center;
-
+    border-bottom: 3px solid transparent;
     position: relative;
     margin-top: -13px;
     padding: 18px;
@@ -68,43 +68,42 @@
     transition: all linear 0.3s;
     display: flex;
     position: absolute;
-    width: 930px;
-    height: 400px;
-    left:790px;
+    width: 950px;
+    height: 300px;
+    left:770px;
     z-index: 10;
-
-
   }
 
   .dropdown-ul{
     list-style: none;
     padding: unset;
     margin: unset;
-    width: 100%;
     display: flex;
-    font-size: 14px;
-    margin-left: -20px;
+    font-size: 13px;
+    margin-left: -15px;
     margin-top: 15px;
-
+    
   }
   
   .dropdown-li{
+    margin-bottom: 15px;
 
-    transition: all linear 0.3s;
-
-    text-align: center;
-    padding: 15px 45px 15px 45px;
 }
-
-  .dropdown-li:hover{
-    background:lightgray;
-    cursor: pointer;
-    color: #fff;
-    height: 10px;
-  }
-
 
   .dropdown-content-ul{
     list-style: none;
     
+   
   }
+
+  .dropdown-li-a{
+    text-decoration: none;
+    color: black;
+    font-family: 'Ubuntu', sans-serif;
+
+}
+.dropdown-li-a:hover{
+   border-bottom:1px solid #bf4565;
+   color: #bf4565;
+
+}

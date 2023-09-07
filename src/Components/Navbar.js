@@ -677,9 +677,22 @@ export default function Navbar() {
             onMouseEnter={() => handleMouseEnter(item.id)}
             onMouseLeave={handleMouseLeave}
           >
-            <button className="navbar-menuItems">{item.name}</button>
+            <button
+              className="navbar-menuItems"
+              style={{
+                borderBottom:
+                  isDrowpdownVisible && activeMenuId === item.id
+                    ? "3px solid #bf4565"
+                    : "transparent",
+              }}
+            >
+              {item.name}
+            </button>
             {isDrowpdownVisible && activeMenuId === item.id && (
-              <Dropdown options={item.options} />
+              <Dropdown
+                options={item.options}
+                isDrowpdownVisible={isDrowpdownVisible}
+              />
             )}
           </li>
         ))}
