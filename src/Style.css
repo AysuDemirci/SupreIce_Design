@@ -1,33 +1,35 @@
 .navbar{
-    
-    width: 100%;
+    width: 50%;
     height: 60px;
     display: flex;
     border-bottom:2px solid #f29999 ;
     border-top:2px solid #f29999 ;
-
+    justify-content: center;
+    align-items: center;
 }
 
 .navbar-ul{
     list-style: none;
     display: flex;
     font-size: large;
-    margin-left: 200px;
-
+    margin-left: 11%;
+    margin: auto;
 }
+
 .navbar-ul-2{
     list-style: none;
     display: flex;
-    gap:15px;
-    font-size: large;
-    margin-top: 23px;
-    
-   
+    font-size: medium;
+    margin-top: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left: 57%;
+    position: absolute;   
+ 
 }
 
 .navbar-brandName{
     margin-top: 0px;
-    padding-left: 350px;
+    padding-left: 25%;
     font-size:50px;
 }
 
@@ -38,40 +40,44 @@
     text-align: center;
     border-bottom: 3px solid transparent;
     position: relative;
-    margin-top: -13px;
-    padding: 18px;
-    
+    margin-top: 1px;
+    padding: 20px;
 }
 
 .navbar-menuItems:hover{
-  border-bottom:3px solid #bf4565;
-  color: #bf4565;
+    border-bottom:3px solid #bf4565;
+    color: #bf4565;
 }
 
 .navbar-searchInput{
     height: 35px;
-    width:13%;
     margin-top: 13px;
-    margin-left: 150px;
-    border-radius: 35px;
+    margin-left:8%;
+    border-radius: 10px;
     border: none;
     background-color: rgba(158, 151, 151, 0.2) ;
     font-size: 15px;
     text-align: center;
   
 }
+.navbar-searchInput:focus{
+    border-color: transparent;
+    outline: none;
+}
 
 
 .dropdown-menu {
     background: #fff;
-    box-shadow: 0px 10px 30px 0px rgba(82, 63, 105, 0.05);
+    box-shadow: 0px 10px 30px 0px rgba(82, 63, 105, 0.15);
     transition: all linear 0.3s;
     display: flex;
     position: absolute;
-    width: 950px;
+    width:37%;
     height: 300px;
-    left:770px;
+    left:32.3%;
     z-index: 10;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
   }
 
   .dropdown-ul{
@@ -91,9 +97,7 @@
 }
 
   .dropdown-content-ul{
-    list-style: none;
-    
-   
+    list-style: none;  
   }
 
   .dropdown-li-a{
@@ -102,8 +106,20 @@
     font-family: 'Ubuntu', sans-serif;
 
 }
-.dropdown-li-a:hover{
-   border-bottom:1px solid #bf4565;
-   color: #bf4565;
 
+  .dropdown-li-a:hover{
+    border-bottom:1px solid #bf4565;
+    color: #bf4565;
+
+}
+
+.navbar-ul2-li{
+  text-decoration: none;
+  color: black;
+}
+.icons{
+  height: 17px;
+  width: 17px;
+  margin-left: 5px;
+  margin-right: 20px;
 }
