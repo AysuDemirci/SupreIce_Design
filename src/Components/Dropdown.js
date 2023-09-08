@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Dropdown(props) {
-  const { options,isDrowpdownVisible } = props;
+  const { options } = props;
   return (
     <div className="dropdown-menu">
       <ul className="dropdown-ul" key={options}>
