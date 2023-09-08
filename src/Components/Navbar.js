@@ -1,5 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Dropdown from "./Dropdown";
+import { FaShoppingCart } from "react-icons/fa";
+
+import { IoPersonSharp } from "react-icons/io5";
+
+import { MdFavorite } from "react-icons/md";
 
 export default function Navbar() {
   const menuItems = [
@@ -655,6 +660,20 @@ export default function Navbar() {
 
   const [isDrowpdownVisible, setIsDropdownVisible] = useState(false);
   const [activeMenuId, setActiveMenuId] = useState(null);
+  const [inputFocus, setInputFocus] = useState(false);
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (inputRef.current && !inputRef.current.contains(event.target)) {
+        setInputFocus(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [inputRef]);
 
   function handleMouseEnter(id) {
     setIsDropdownVisible(true);
@@ -664,45 +683,73 @@ export default function Navbar() {
     setIsDropdownVisible(false);
     setActiveMenuId(null);
   }
+  function handleFocus() {
+    setInputFocus(true);
+  }
 
   return (
-    <div className="navbar">
-      <h1 className="navbar-brandName">SupreIce</h1>
-      <ul className="navbar-ul">
-        {menuItems.map((item) => (
-          <li
-            key={item.id}
-            id={item.id}
-            className="navbar-li"
-            onMouseEnter={() => handleMouseEnter(item.id)}
-            onMouseLeave={handleMouseLeave}
-          >
-            <button
-              className="navbar-menuItems"
-              style={{
-                borderBottom:
-                  isDrowpdownVisible && activeMenuId === item.id
-                    ? "3px solid #bf4565"
-                    : "transparent",
-              }}
-            >
-              {item.name}
-            </button>
-            {isDrowpdownVisible && activeMenuId === item.id && (
-              <Dropdown
-                options={item.options}
-                isDrowpdownVisible={isDrowpdownVisible}
-              />
-            )}
+    <div>
+      <div style={{ display: "flex" }}>
+        <h1 className="navbar-brandName">SupreIce</h1>
+        <input
+          className="navbar-searchInput"
+          placeholder="Ara..."
+          ref={inputRef}
+          style={{
+            width: inputFocus ? "23%" : "15%",
+            transition: "width  0.3s",
+          }}
+          onFocus={handleFocus}
+        />
+        <ul className="navbar-ul-2">
+          <li >
+            <a className="navbar-ul2-li" href="/">
+              Sepetim
+              <FaShoppingCart className="icons" />
+            </a>
           </li>
-        ))}
-      </ul>
-      <input className="navbar-searchInput" placeholder="Ara..." />
-      <ul className="navbar-ul-2">
-        <li>Sepetim</li>
-        <li>Hesabım</li>
-        <li>Favorilerim</li>
-      </ul>
+          <li>
+            <a className="navbar-ul2-li" href="/">        
+              Hesabım
+              <IoPersonSharp className="icons" />
+            </a>
+          </li>
+          <li>
+            <a className="navbar-ul2-li" href="/">
+              Favorilerim
+              <MdFavorite className="icons" />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div className="navbar" style={{ margin: "auto" }}>
+        <ul className="navbar-ul">
+          {menuItems.map((item) => (
+            <li
+              key={item.id}
+              id={item.id}
+              className="navbar-li"
+              onMouseEnter={() => handleMouseEnter(item.id)}
+              onMouseLeave={handleMouseLeave}
+            >
+              <button
+                className="navbar-menuItems"
+                style={{
+                  borderBottom:
+                    isDrowpdownVisible && activeMenuId === item.id
+                      ? "3px solid #bf4565"
+                      : "transparent",
+                }}
+              >
+                {item.name}
+              </button>
+              {isDrowpdownVisible && activeMenuId === item.id && (
+                <Dropdown options={item.options} />
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
