@@ -691,12 +691,13 @@ export default function Navbar() {
     <div>
       <div style={{ display: "flex" }}>
         <h1 className="navbar-brandName">SupreIce</h1>
+      
         <input
           className="navbar-searchInput"
           placeholder="Ara..."
           ref={inputRef}
           style={{
-            width: inputFocus ? "23%" : "15%",
+            width: inputFocus ? "20%" : "15%",
             transition: "width  0.3s",
           }}
           onFocus={handleFocus}
