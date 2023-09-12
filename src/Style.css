@@ -1,35 +1,43 @@
+.all-component{
+    justify-content: center;
+    width: 1250px;
+    align-items: center;
+    margin:auto;
+}
+
+
 .navbar{
-    width: 50%;
     height: 60px;
     display: flex;
     border-bottom:2px solid #f29999 ;
     border-top:2px solid #f29999 ;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+
 }
 
 .navbar-ul{
     list-style: none;
     display: flex;
-    font-size: large;
-    margin-left: 11%;
     margin: auto;
+    width: 100%;
+    justify-content: center;
 }
+
 
 .navbar-ul-2{
     list-style: none;
     display: flex;
-    font-size: medium;
     margin-top: 20px;
+    margin-left: 930px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-left: 62%;
-    position: absolute;   
+    position: absolute;
+
  
 }
 
 .navbar-brandName{
     margin-top: 0px;
-    padding-left: 25%;
+
     font-size:50px;
 }
 
@@ -44,6 +52,10 @@
     padding: 20px;
 }
 
+
+
+
+
 .navbar-menuItems:hover{
     border-bottom:3px solid #bf4565;
     color: #bf4565;
@@ -52,7 +64,7 @@
 .navbar-searchInput{
     height: 35px;
     margin-top: 13px;
-    margin-left:8%;
+    margin-left:15%;
     border-radius: 10px;
     border: none;
     background-color: rgba(158, 151, 151, 0.2) ;
@@ -66,20 +78,30 @@
 }
 
 
+
 .dropdown-menu {
     background: #fff;
     box-shadow: 0px 10px 30px 0px rgba(82, 63, 105, 0.15);
     transition: all linear 0.3s;
     display: flex;
     position: absolute;
-    width:37%;
+    width:943px;
+    overflow: hidden;
+    box-sizing: border-box;
     height: 300px;
-    left:32.3%;
+    margin: auto;
+    top: 105%;
+    left: 175px;
     z-index: 10;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
   }
-
+  
+  .dropdown-container {
+    position: absolute;
+    top: 100%; /* Navbarın hemen altında başlaması için */
+    left: 0; /* Navbarın tam başından başlaması için */
+  }
   .dropdown-ul{
     list-style: none;
     padding: unset;
@@ -88,11 +110,13 @@
     font-size: 13px;
     margin-left: -15px;
     margin-top: 15px;
+   
     
   }
   
   .dropdown-li{
     margin-bottom: 15px;
+    position: relative;
 
 }
 
