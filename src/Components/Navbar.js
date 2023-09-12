@@ -662,6 +662,8 @@ export default function Navbar() {
   const [activeMenuId, setActiveMenuId] = useState(null);
   const [inputFocus, setInputFocus] = useState(false);
   const inputRef = useRef(null);
+  
+
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -688,29 +690,29 @@ export default function Navbar() {
   }
 
   return (
-    <div>
-      <div style={{ display: "flex" }}>
+    <div className="all-component">
+      <div style={{ display: "flex",height:"80px"}}>
         <h1 className="navbar-brandName">SupreIce</h1>
-      
+
         <input
           className="navbar-searchInput"
           placeholder="Ara..."
           ref={inputRef}
           style={{
-            width: inputFocus ? "20%" : "15%",
+            width: inputFocus ? "40%" : "30%",
             transition: "width  0.3s",
           }}
           onFocus={handleFocus}
         />
         <ul className="navbar-ul-2">
-          <li >
+          <li>
             <a className="navbar-ul2-li" href="/">
               Sepetim
               <FaShoppingCart className="icons" />
             </a>
           </li>
           <li>
-            <a className="navbar-ul2-li" href="/">        
+            <a className="navbar-ul2-li" href="/">
               Hesabım
               <IoPersonSharp className="icons" />
             </a>
@@ -744,9 +746,12 @@ export default function Navbar() {
               >
                 {item.name}
               </button>
-              {isDrowpdownVisible && activeMenuId === item.id && (
+              
+                 {isDrowpdownVisible && activeMenuId === item.id && (
                 <Dropdown options={item.options} />
               )}
+          
+             
             </li>
           ))}
         </ul>
