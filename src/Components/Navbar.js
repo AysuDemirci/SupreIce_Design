@@ -1,10 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import Dropdown from "./Dropdown";
 import { FaShoppingCart } from "react-icons/fa";
-
 import { IoPersonSharp } from "react-icons/io5";
-
 import { MdFavorite } from "react-icons/md";
+import CartDropdown from "./CartDropdown";
 
 export default function Navbar() {
   const menuItems = [
@@ -656,12 +655,63 @@ export default function Navbar() {
         },
       ],
     },
+    
+     
+
   ];
+
+
+  const accountDetails=[
+    {
+      id:8,
+      favorite:"Tüm Siparişlerim"
+    },
+    {
+      id:9,
+      favorite:"Değerlendirmelerim"
+    },
+    {
+      id:10,
+      favorite:"Satıcı Mesajlarım"
+    },
+    {
+      id:11,
+      favorite:"Cüzdanım"
+    },
+    {
+      id:12,
+      favorite:"İndirim Kuponlarım"
+    },
+    {
+      id:13,
+      favorite:"Kullanıcı Bilgilerim"
+    },
+    {
+      id:14,
+      favorite:"Asistan"
+    },
+     {
+      id:15,
+      favorite:"Çıkış Yap"
+    },
+  ]
+
+
 
   const [isDrowpdownVisible, setIsDropdownVisible] = useState(false);
   const [activeMenuId, setActiveMenuId] = useState(null);
   const [inputFocus, setInputFocus] = useState(false);
   const inputRef = useRef(null);
+
+  const [isCartDropdownVisible,setIsCartDropdownVisible]=useState(false)
+
+  const handleCartMouseEnter=()=>{
+    setIsCartDropdownVisible(true)
+  }
+  const handleCartMouseLeave=()=>{
+    setIsCartDropdownVisible(false)
+  }
+
   
 
 
@@ -705,18 +755,22 @@ export default function Navbar() {
           onFocus={handleFocus}
         />
         <ul className="navbar-ul-2">
-          <li>
+        <li onMouseEnter={handleCartMouseEnter} onMouseLeave={handleCartMouseLeave}>
+          {isCartDropdownVisible&&<CartDropdown accountDetails={accountDetails}/>}
+            <a className="navbar-ul2-li-drp" href="/">
+              Hesabım
+              <IoPersonSharp className="icons" />
+            </a>
+            
+          </li>
+          <li  >
             <a className="navbar-ul2-li" href="/">
               Sepetim
               <FaShoppingCart className="icons" />
             </a>
+            
           </li>
-          <li>
-            <a className="navbar-ul2-li" href="/">
-              Hesabım
-              <IoPersonSharp className="icons" />
-            </a>
-          </li>
+          
           <li>
             <a className="navbar-ul2-li" href="/">
               Favorilerim
