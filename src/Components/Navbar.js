@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Dropdown from "./Dropdown";
 import { FaShoppingCart } from "react-icons/fa";
-import { IoPersonSharp } from "react-icons/io5";
+import { IoPersonSharp,IoMenu } from "react-icons/io5";
 import { MdFavorite } from "react-icons/md";
 import CartDropdown from "./CartDropdown";
 
@@ -701,6 +701,7 @@ export default function Navbar() {
   const [isDrowpdownVisible, setIsDropdownVisible] = useState(false);
   const [activeMenuId, setActiveMenuId] = useState(null);
   const [inputFocus, setInputFocus] = useState(false);
+  const [showNavbar,setShowNavbar]=useState(false)
   const inputRef = useRef(null);
 
   const [isCartDropdownVisible,setIsCartDropdownVisible]=useState(false)
@@ -712,7 +713,9 @@ export default function Navbar() {
     setIsCartDropdownVisible(false)
   }
 
-  
+  function handleShowNavbar(){
+    setShowNavbar(!showNavbar)
+  }
 
 
   useEffect(() => {
@@ -754,7 +757,8 @@ export default function Navbar() {
           }}
           onFocus={handleFocus}
         />
-        <ul className="navbar-ul-2">
+        <div >
+           <ul className="navbar-ul-2">
         <li onMouseEnter={handleCartMouseEnter} onMouseLeave={handleCartMouseLeave}>
           {isCartDropdownVisible&&<CartDropdown accountDetails={accountDetails}/>}
             <a className="navbar-ul2-li-drp" href="/">
@@ -763,7 +767,7 @@ export default function Navbar() {
             </a>
             
           </li>
-          <li  >
+          <li>
             <a className="navbar-ul2-li" href="/">
               Sepetim
               <FaShoppingCart className="icons" />
@@ -778,8 +782,13 @@ export default function Navbar() {
             </a>
           </li>
         </ul>
+        </div>
+       
       </div>
-      <div className="navbar" style={{ margin: "auto" }}>
+      <div className="menu-icon" onClick={handleShowNavbar}>
+        <IoMenu/>
+      </div>
+      <div className={`navbar ${showNavbar&& "active"}`}style={{ margin: "auto" }}>
         <ul className="navbar-ul">
           {menuItems.map((item) => (
             <li
@@ -802,7 +811,7 @@ export default function Navbar() {
               </button>
               
                  {isDrowpdownVisible && activeMenuId === item.id && (
-                <Dropdown options={item.options} />
+                <Dropdown options={item.options}  />
               )}
           
              

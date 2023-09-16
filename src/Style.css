@@ -6,6 +6,8 @@
 }
 
 
+
+
 .navbar{
     height: 60px;
     display: flex;
@@ -28,17 +30,14 @@
     list-style: none;
     display: flex;
     margin-top: 20px;
-    margin-left: 900px;
+    margin-left: 120px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     position: absolute;
-    gap: 15px;
-
- 
+    gap: 15px; 
 }
 
 .navbar-brandName{
     margin-top: 0px;
-
     font-size:50px;
 }
 
@@ -52,9 +51,6 @@
     margin-top: 1px;
     padding: 20px;
 }
-
-
-
 
 
 .navbar-menuItems:hover{
@@ -100,8 +96,8 @@
   
   .dropdown-container {
     position: absolute;
-    top: 100%; /* Navbarın hemen altında başlaması için */
-    left: 0; /* Navbarın tam başından başlaması için */
+    top: 100%; 
+    left: 0; 
   }
   .dropdown-ul{
     list-style: none;
@@ -115,25 +111,25 @@
     
   }
   
-  .dropdown-li{
+.dropdown-li{
     margin-bottom: 15px;
     position: relative;
 
 }
 
-  .dropdown-content-ul{
+.dropdown-content-ul{
     list-style: none;  
 
   }
 
-  .dropdown-li-a{
+.dropdown-li-a{
     text-decoration: none;
     color: black;
     font-family: 'Ubuntu', sans-serif;
 
 }
 
-  .dropdown-li-a:hover{
+.dropdown-li-a:hover{
     border-bottom:1px solid #bf4565;
     color: #bf4565;
 
@@ -155,17 +151,10 @@
 
 }
 
-/* .navbar-ul2-li-drp:hover{
-  background: gray;
-  cursor: pointer;
-  color: #fff;
-} */
 
 .cart-dropdown{
-
-
-border: 1px solid lightgray;
-border-radius: 5px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
   transition: all linear 0.3s;
   position: absolute;
   margin: auto;
@@ -175,18 +164,13 @@ border-radius: 5px;
   left: -70px;
   height: 420px;
   background: #fff;
-    box-shadow: 0px 10px 30px 0px rgba(82, 63, 105, 0.15);
-    transition: all linear 0.3s;
-    display: flex;
-
-
-    overflow: hidden;
-    box-sizing: border-box;
-
-
-
-
+  box-shadow: 0px 10px 30px 0px rgba(82, 63, 105, 0.15);
+  transition: all linear 0.3s;
+  display: flex;
+  overflow: hidden;
+  box-sizing: border-box;
 }
+
 .icons{
   height: 15px;
   width: 15px;
@@ -199,7 +183,6 @@ border-radius: 5px;
  padding: 10px;
  width: 100%;
  border-radius: 7px;
-
 }
 
 
@@ -208,10 +191,10 @@ border-radius: 5px;
   text-decoration: none;
   color: black;
   font-family: 'Ubuntu', sans-serif;
-width: 85%;
+  width: 85%;
   position: relative;
   padding: 14px;
-border-radius: 7px;
+  border-radius: 7px;
 }
 
 .cart-li:hover{
@@ -219,4 +202,46 @@ border-radius: 7px;
   cursor: pointer;
   color: #fff;
 
+}
+
+.menu-icon{
+  display: none;
+}
+
+@media(max-width:1275px){
+  .menu-icon{
+    display: block;
+    
+  }
+  .navbar{
+    position: absolute;
+    right: 0;
+    top: 70px;
+    background-color: #fef7e5;
+    width: 0px;
+    height: calc(100vh - 75px);
+    transition: all 0.3s ease-in;
+    overflow: hidden;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 10px 30px 0px rgba(82, 63, 105, 0.15);
+
+
+  }
+ 
+
+  .navbar.active{
+    width: 270px;
+  }
+  .navbar ul{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+  }
+  .navbar ul li{
+    margin-right: unset;
+   
+  }
+  
+  
 }
