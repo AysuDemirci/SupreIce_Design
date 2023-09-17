@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Dropdown from "./Dropdown";
 import { FaShoppingCart } from "react-icons/fa";
-import { IoPersonSharp,IoMenu } from "react-icons/io5";
+import { IoPersonSharp, IoMenu } from "react-icons/io5";
 import { MdFavorite } from "react-icons/md";
 import CartDropdown from "./CartDropdown";
 
@@ -655,68 +655,61 @@ export default function Navbar() {
         },
       ],
     },
-    
-     
-
   ];
 
-
-  const accountDetails=[
+  const accountDetails = [
     {
-      id:8,
-      favorite:"Tüm Siparişlerim"
-    },
-    {
-      id:9,
-      favorite:"Değerlendirmelerim"
+      id: 8,
+      favorite: "Tüm Siparişlerim",
     },
     {
-      id:10,
-      favorite:"Satıcı Mesajlarım"
+      id: 9,
+      favorite: "Değerlendirmelerim",
     },
     {
-      id:11,
-      favorite:"Cüzdanım"
+      id: 10,
+      favorite: "Satıcı Mesajlarım",
     },
     {
-      id:12,
-      favorite:"İndirim Kuponlarım"
+      id: 11,
+      favorite: "Cüzdanım",
     },
     {
-      id:13,
-      favorite:"Kullanıcı Bilgilerim"
+      id: 12,
+      favorite: "İndirim Kuponlarım",
     },
     {
-      id:14,
-      favorite:"Asistan"
+      id: 13,
+      favorite: "Kullanıcı Bilgilerim",
     },
-     {
-      id:15,
-      favorite:"Çıkış Yap"
+    {
+      id: 14,
+      favorite: "Asistan",
     },
-  ]
-
-
+    {
+      id: 15,
+      favorite: "Çıkış Yap",
+    },
+  ];
 
   const [isDrowpdownVisible, setIsDropdownVisible] = useState(false);
   const [activeMenuId, setActiveMenuId] = useState(null);
   const [inputFocus, setInputFocus] = useState(false);
-  const [showNavbar,setShowNavbar]=useState(false)
+  const [showNavbar, setShowNavbar] = useState(false);
   const inputRef = useRef(null);
 
-  const [isCartDropdownVisible,setIsCartDropdownVisible]=useState(false)
+  const [isCartDropdownVisible, setIsCartDropdownVisible] = useState(false);
 
-  const handleCartMouseEnter=()=>{
-    setIsCartDropdownVisible(true)
-  }
-  const handleCartMouseLeave=()=>{
-    setIsCartDropdownVisible(false)
-  }
+  const handleCartMouseEnter = () => {
+    setIsCartDropdownVisible(true);
+  };
+  const handleCartMouseLeave = () => {
+    setIsCartDropdownVisible(false);
+  };
 
-  function handleShowNavbar(){
-    setShowNavbar(!showNavbar)
+  function handleShowNavbar() {
+    setShowNavbar(!showNavbar);
   }
-
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -744,7 +737,7 @@ export default function Navbar() {
 
   return (
     <div className="all-component">
-      <div style={{ display: "flex",height:"80px"}}>
+      <div style={{ display: "flex", height: "80px" }}>
         <h1 className="navbar-brandName">SupreIce</h1>
 
         <input
@@ -757,38 +750,14 @@ export default function Navbar() {
           }}
           onFocus={handleFocus}
         />
-        <div >
-           <ul className="navbar-ul-2">
-        <li onMouseEnter={handleCartMouseEnter} onMouseLeave={handleCartMouseLeave}>
-          {isCartDropdownVisible&&<CartDropdown accountDetails={accountDetails}/>}
-            <a className="navbar-ul2-li-drp" href="/">
-              Hesabım
-              <IoPersonSharp className="icons" />
-            </a>
-            
-          </li>
-          <li>
-            <a className="navbar-ul2-li" href="/">
-              Sepetim
-              <FaShoppingCart className="icons" />
-            </a>
-            
-          </li>
-          
-          <li>
-            <a className="navbar-ul2-li" href="/">
-              Favorilerim
-              <MdFavorite className="icons" />
-            </a>
-          </li>
-        </ul>
-        </div>
-       
       </div>
       <div className="menu-icon" onClick={handleShowNavbar}>
-        <IoMenu/>
+        <IoMenu />
       </div>
-      <div className={`navbar ${showNavbar&& "active"}`}style={{ margin: "auto" }}>
+      <div
+        className={`navbar ${showNavbar && "active"}`}
+        style={{ margin: "auto" }}
+      >
         <ul className="navbar-ul">
           {menuItems.map((item) => (
             <li
@@ -798,26 +767,56 @@ export default function Navbar() {
               onMouseEnter={() => handleMouseEnter(item.id)}
               onMouseLeave={handleMouseLeave}
             >
-              <button
-                className="navbar-menuItems"
-                style={{
-                  borderBottom:
-                    isDrowpdownVisible && activeMenuId === item.id
-                      ? "3px solid #bf4565"
-                      : "transparent",
-                }}
-              >
-                {item.name}
-              </button>
-              
-                 {isDrowpdownVisible && activeMenuId === item.id && (
-                <Dropdown options={item.options}  />
+              <a href="/" style={{ textDecoration: "none", color: "black" }}>
+                {" "}
+                <button
+                  className="navbar-menuItems"
+                  style={{
+                    borderBottom:
+                      isDrowpdownVisible && activeMenuId === item.id
+                        ? "3px solid #bf4565"
+                        : "transparent",
+                  }}
+                >
+                  {item.name}
+                </button>
+              </a>
+
+              {isDrowpdownVisible && activeMenuId === item.id && (
+                <Dropdown options={item.options} />
               )}
-          
-             
             </li>
           ))}
         </ul>
+        <div className="navbar-ul2-style">
+          <ul className="navbar-ul-2">
+            <li
+              onMouseEnter={handleCartMouseEnter}
+              onMouseLeave={handleCartMouseLeave}
+            >
+              {isCartDropdownVisible && (
+                <CartDropdown accountDetails={accountDetails} />
+              )}
+              <a className="navbar-ul2-li-drp navbar-ul2-li" href="/">
+                Hesabım
+                <IoPersonSharp className="icons" />
+              </a>
+            </li>
+            <li>
+              <a className="navbar-ul2-li" href="/">
+                Sepetim
+                <FaShoppingCart className="icons" />
+              </a>
+            </li>
+
+            <li>
+              <a className="navbar-ul2-li" href="/">
+                Favorilerim
+                <MdFavorite className="icons" />
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );
