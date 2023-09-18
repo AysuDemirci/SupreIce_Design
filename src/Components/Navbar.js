@@ -752,7 +752,7 @@ export default function Navbar() {
         />
       </div>
       <div className="menu-icon" onClick={handleShowNavbar}>
-        <IoMenu />
+        <IoMenu style={{width:"50px"}}/>
       </div>
       <div
         className={`navbar ${showNavbar && "active"}`}
@@ -767,19 +767,21 @@ export default function Navbar() {
               onMouseEnter={() => handleMouseEnter(item.id)}
               onMouseLeave={handleMouseLeave}
             >
-              <a href="/" style={{ textDecoration: "none", color: "black" }}>
-                {" "}
-                <button
-                  className="navbar-menuItems"
-                  style={{
-                    borderBottom:
-                      isDrowpdownVisible && activeMenuId === item.id
-                        ? "3px solid #bf4565"
-                        : "transparent",
-                  }}
-                >
-                  {item.name}
-                </button>
+              <a
+                href="/"
+                className="navbar-menuItems"
+                style={{
+                  textDecoration: "none",
+                  
+                  borderBottom:
+                    activeMenuId === item.id
+                      ? "3px solid #bf4565"
+                      : "transparent",
+                  color:activeMenuId===item.id?"#bf4565" :"black"  , 
+                }}
+              >
+  
+                {item.name}
               </a>
 
               {isDrowpdownVisible && activeMenuId === item.id && (
@@ -794,13 +796,14 @@ export default function Navbar() {
               onMouseEnter={handleCartMouseEnter}
               onMouseLeave={handleCartMouseLeave}
             >
-              {isCartDropdownVisible && (
-                <CartDropdown accountDetails={accountDetails} />
-              )}
+              
               <a className="navbar-ul2-li-drp navbar-ul2-li" href="/">
                 Hesabım
                 <IoPersonSharp className="icons" />
               </a>
+              {isCartDropdownVisible && (
+                <CartDropdown accountDetails={accountDetails} />
+              )}
             </li>
             <li>
               <a className="navbar-ul2-li" href="/">

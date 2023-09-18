@@ -5,9 +5,6 @@
     margin:auto;
 }
 
-
-
-
 .navbar{
     height: 60px;
     display: flex;
@@ -46,19 +43,14 @@
 .navbar-menuItems{
     background-color: transparent;
     border: none;
-    font-size: 16px;
+    font-size: 15px;
     text-align: center;
-    border-bottom: 3px solid transparent;
     position: relative;
-    margin-top: 2px;
-    padding: 20px;
+    margin-top: -5px;
+    padding: 18px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-
-.navbar-menuItems:hover{
-    border-bottom:3px solid #bf4565;
-    color: #bf4565;
-}
 
 .navbar-searchInput{
     height: 35px;
@@ -84,13 +76,13 @@
     transition: all linear 0.3s;
     display: flex;
     position: absolute;
-    width:943px;
+    width:920px;
     overflow: hidden;
     box-sizing: border-box;
     height: 300px;
     margin: auto;
     top: 105%;
-    left: 175px;
+    left: 185px;
     z-index: 10;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -107,7 +99,7 @@
     margin: unset;
     display: flex;
     font-size: 13px;
-    margin-left: -15px;
+    margin-left: -20px;
     margin-top: 15px;
    
     
@@ -140,7 +132,7 @@
 .navbar-ul2-li{
   text-decoration: none;
   color: black;
-  font-size: 16px;
+  font-size: 15px;
 
   
   
@@ -148,7 +140,7 @@
 .navbar-ul2-li-drp{
   text-decoration: none;
   color: black;
-  font-size: 16px;
+  font-size: 15px;
  
 
 
@@ -214,15 +206,18 @@
 @media(max-width:1275px){
   .menu-icon{
     display: block;
+    margin-top: -55px;
+    margin-left: 40px;
+
     
   }
   .navbar{
-    position: absolute;
+    position: fixed;
     right: 0;
-    top: 70px;
+    top: 0px;
     background-color: #fef7e5;
     width: 0px;
-    height: calc(100vh - 60px);
+    height: calc(100vh);
     transition: all 0.3s ease-in;
     overflow: hidden;
     border: none;
@@ -237,19 +232,20 @@
   .navbar ul{
     display: flex;
     flex-direction: column;
-    margin-top: 50px;
+    margin-top: 100px;
     
     
   }
   .navbar ul li{
     margin-right: unset;
+    margin-bottom: 45px;
+
     
   }
   .navbar-ul2-style{
-    margin-top: 530px;
+    margin-top: 540px;
     margin-left: 385px;
     position: absolute;
-    font-size: 35px;
 
   }
   .icons{
@@ -257,11 +253,21 @@
   
   }
   .navbar-menuItems{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 0px;
+    margin-left: 20px;
   }
+ 
+  
   .navbar-ul2-li:hover{
     border-bottom: 3px solid #bf4565;
     color: #bf4565;
+ 
+  }
+  .cart-dropdown{
+    display: none;
+  }
+  .navbar-brandName{
+    margin-left: 100px;
   }
   
 }
