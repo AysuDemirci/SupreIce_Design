@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import Dropdown from "./Dropdown";
 import { FaShoppingCart } from "react-icons/fa";
-import { IoPersonSharp, IoMenu } from "react-icons/io5";
-import { MdFavorite } from "react-icons/md";
+import { IoPersonSharp, IoMenuSharp } from "react-icons/io5";
+import { MdFavorite, MdSearch } from "react-icons/md";
 import CartDropdown from "./CartDropdown";
 
 export default function Navbar() {
@@ -697,6 +697,7 @@ export default function Navbar() {
   const [inputFocus, setInputFocus] = useState(false);
   const [showNavbar, setShowNavbar] = useState(false);
   const inputRef = useRef(null);
+  const [searchInput, setSearchInput] = useState(false);
 
   const [isCartDropdownVisible, setIsCartDropdownVisible] = useState(false);
 
@@ -734,12 +735,26 @@ export default function Navbar() {
   function handleFocus() {
     setInputFocus(true);
   }
+  function handleSearchInput() {
+    setSearchInput(!searchInput);
+  }
 
   return (
     <div className="all-component">
       <div style={{ display: "flex", height: "80px" }}>
         <h1 className="navbar-brandName">SupreIce</h1>
-
+        <div className="resp-searchBox">
+          <MdSearch className="search-button" onClick={handleSearchInput} />
+          {searchInput && (
+            <input
+              className="searchInput-box"
+              style={{
+                width: "150px",
+                transition: "width  0.3s",
+              }}
+            />
+          )}
+        </div>
         <input
           className="navbar-searchInput"
           placeholder="Ara..."
@@ -751,8 +766,8 @@ export default function Navbar() {
           onFocus={handleFocus}
         />
       </div>
-      <div className="menu-icon" onClick={handleShowNavbar}>
-        <IoMenu style={{width:"50px"}}/>
+      <div onClick={handleShowNavbar}>
+        <IoMenuSharp className="menu-icon" />
       </div>
       <div
         className={`navbar ${showNavbar && "active"}`}
@@ -772,15 +787,14 @@ export default function Navbar() {
                 className="navbar-menuItems"
                 style={{
                   textDecoration: "none",
-                  
+
                   borderBottom:
                     activeMenuId === item.id
                       ? "3px solid #bf4565"
                       : "transparent",
-                  color:activeMenuId===item.id?"#bf4565" :"black"  , 
+                  color: activeMenuId === item.id ? "#bf4565" : "black",
                 }}
               >
-  
                 {item.name}
               </a>
 
@@ -796,7 +810,6 @@ export default function Navbar() {
               onMouseEnter={handleCartMouseEnter}
               onMouseLeave={handleCartMouseLeave}
             >
-              
               <a className="navbar-ul2-li-drp navbar-ul2-li" href="/">
                 Hesabım
                 <IoPersonSharp className="icons" />
