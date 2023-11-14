@@ -199,6 +199,46 @@
 
 }
 
+.filterDropdown{
+  border: 1px solid lightgray;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition: all linear 0.3s;
+  position: absolute;
+  margin: auto;
+  top: 6.4%;
+  z-index: 11;
+  width: 26.25%;
+ left: 713.3px;
+  background: #fff;
+  box-shadow: 0px 10px 30px 0px rgba(82, 63, 105, 0.15);
+  transition: all linear 0.3s;
+  display: flex;
+  overflow: auto;
+  box-sizing: border-box;
+}
+.filterUl{
+  list-style: none;
+ padding: 10px;
+ width: 100%;
+ border-radius: 7px;
+}
+.filterLi{
+  text-decoration: none;
+  color: black;
+  font-family: 'Ubuntu', sans-serif;
+  width: 90%;
+  position: relative;
+  padding: 10px;
+  border-radius: 7px;
+}
+.filterLi:hover{
+  background: #bf4565;
+  cursor: pointer;
+  color: #fff;
+
+}
+
 .menu-icon{
   display: none;  
 }
