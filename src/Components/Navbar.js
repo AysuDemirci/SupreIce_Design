@@ -4,6 +4,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { IoPersonSharp, IoMenuSharp } from "react-icons/io5";
 import { MdFavorite, MdSearch } from "react-icons/md";
 import CartDropdown from "./CartDropdown";
+import SearchBox from "./SearchBox";
 
 export default function Navbar() {
   const menuItems = [
@@ -698,8 +699,13 @@ export default function Navbar() {
   const [showNavbar, setShowNavbar] = useState(false);
   const inputRef = useRef(null);
   const [searchInput, setSearchInput] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const [isCartDropdownVisible, setIsCartDropdownVisible] = useState(false);
+
+  function handleOpenDropdown() {
+    setDropdownOpen(!dropdownOpen);
+  }
 
   const handleCartMouseEnter = () => {
     setIsCartDropdownVisible(true);
@@ -739,12 +745,40 @@ export default function Navbar() {
     setSearchInput(!searchInput);
   }
 
+  const [inputText, setInputText] = useState("");
+  const list = menuItems.map((a) => a.options).flat();
+  const id = menuItems.map((a) => a.id);
+  const data = list.map((a) => a.contents).flat();
+
+  const [filterContent, setFilterContent] = useState(data);
+
+  function inputHandler(e) {
+    debugger;
+    const searchTerm = e.target.value;
+    setInputText(searchTerm);
+    if (searchTerm !== "") {
+      const filteredItems = data.filter((content) =>
+        content.content.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setFilterContent(filteredItems);
+    } else {
+      return "";
+    }
+  }
+
   return (
     <div className="all-component">
       <div style={{ display: "flex", height: "80px" }}>
         <h1 className="navbar-brandName">SupreIce</h1>
+        {/* burası sayfa küçülünce açılan yer */}
         <div className="resp-searchBox">
-          <MdSearch className="search-button" onClick={handleSearchInput} />
+          <MdSearch
+            className="search-button"
+            onClick={() => {
+              handleSearchInput();
+              handleOpenDropdown();
+            }}
+          />
           {searchInput && (
             <input
               className="searchInput-box"
@@ -752,9 +786,20 @@ export default function Navbar() {
                 width: "150px",
                 transition: "width  0.3s",
               }}
+              onChange={(e) => inputHandler(e)}
+              value={inputText || ""}
             />
           )}
+
+          {/* <div>
+            <ul>
+              {filterContent.map((a) => (
+                <li key={id}>{a.content}</li>
+              ))}
+            </ul>
+          </div> */}
         </div>
+        {/* ana sayfa */}
         <input
           className="navbar-searchInput"
           placeholder="Ara..."
@@ -762,9 +807,24 @@ export default function Navbar() {
           style={{
             width: inputFocus ? "40%" : "30%",
             transition: "width  0.3s",
+            borderBottomLeftRadius: inputFocus ? "0px" : "10px",
+            borderBottomRightRadius: inputFocus ? "0px" : "10px",
           }}
           onFocus={handleFocus}
+          value={inputText || ""}
+          onChange={(e) => inputHandler(e)}
         />
+        {inputFocus && (
+          <div className="filterDropdown">
+            <ul className="filterUl">
+              {filterContent.map((a) => (
+                <li key={id} className="filterLi">
+                  {a.content}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
       <div onClick={handleShowNavbar}>
         <IoMenuSharp className="menu-icon" />
@@ -789,18 +849,21 @@ export default function Navbar() {
                   textDecoration: "none",
 
                   borderBottom:
-                    activeMenuId === item.id
+                    activeMenuId === item.id && inputFocus === false
                       ? "3px solid #bf4565"
                       : "transparent",
-                  color: activeMenuId === item.id ? "#bf4565" : "black",
+                  color:
+                    activeMenuId === item.id && inputFocus === false
+                      ? "#bf4565"
+                      : "black",
                 }}
               >
                 {item.name}
               </a>
 
-              {isDrowpdownVisible && activeMenuId === item.id && (
-                <Dropdown options={item.options} />
-              )}
+              {isDrowpdownVisible &&
+                activeMenuId === item.id &&
+                inputFocus === false && <Dropdown options={item.options} />}
             </li>
           ))}
         </ul>
